@@ -1,0 +1,15 @@
+[ClassVersion("1.0.0"),FriendlyName("ContentSpecification")] 
+Class KG_XmlContentSpecification
+{
+    [required, Write]string XPath;
+    [required, Write]string Value;
+	[Write]string Name;
+};
+
+[ClassVersion("1.0.0.0"), FriendlyName("XmlContent")]
+class KG_XmlContent: OMI_BaseResource
+{
+[Key] string FileFullName;
+[required, Write, EmbeddedInstance("KG_XmlContentSpecification"), Description("Content specification, e.g. XPath, Value")] String ContentSpec[];
+};
+
