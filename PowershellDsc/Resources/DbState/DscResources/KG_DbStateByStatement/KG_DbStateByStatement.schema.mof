@@ -1,0 +1,10 @@
+[ClassVersion("1.0.0.0"), FriendlyName("DBStateByStatement")]
+class KG_DBStateByStatement: OMI_BaseResource
+{
+[Key] string ServerName;
+[Key] string DatabaseName;
+[Key] string TestSql;
+[Required, Write]string GetSql;
+[Required, Write]string SetSql;
+[Write,EmbeddedInstance("MSFT_KeyValuePair")] string Variables[];
+};
